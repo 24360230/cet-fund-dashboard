@@ -179,6 +179,7 @@ function bars(el,items,colors){
 }
 
 function render(d){
+  loaded=true;
   const g=k=>d.m[k]||{count:0,amount:0};
   const avail=g("available").amount, awarded=g("awarded").amount;
   const remaining=d.m.remaining?g("remaining").amount:avail-awarded;
@@ -228,8 +229,17 @@ async function load(){
       const r=await fetch(SUMMARY_CSV_URL,{cache:"no-store"}); if(!r.ok) throw 0;
       return render(build(parseCSV(await r.text())));
     }
-  }catch(e){ console.warn("Live data unavailable; keeping last values."); return; }
+  }catch(e){
+    console.warn("Live data unavailable; keeping last values.");
+    if(!loaded) $("status").textContent="Live data is temporarily unavailable. Retrying…";
+    return;
+  }
   render(build(parseCSV(FALLBACK_CSV)));
+}
+let loaded=false;
+if(API_URL||SUMMARY_CSV_URL){
+  $("kpis").innerHTML='<div class="card" style="grid-column:1/-1"><div class="label">Loading the latest figures…</div></div>';
+  $("status").textContent="Loading the latest figures…";
 }
 load();
 if(API_URL||SUMMARY_CSV_URL) setInterval(()=>{ if(!document.hidden) load(); }, POLL_SECONDS*1000);
