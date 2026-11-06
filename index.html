@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 Community Experts Fund</title>
+<meta name="description" content="Award progress for the Tower Foundation's 2026 Community Experts Fund.">
+<style>
+  :root{
+    --bg:#f7f6f2; --card:#ffffff; --ink:#1d2a33; --muted:#5f6b73; --line:#e3e0d8;
+    --accent:#336E77; --accent-soft:#d7e8ef; --deep:#1f4a52; --ochre:#d8a830; --sage:#787860; --plum:#d9382f; --slate:#3a3a30; --good:#2e7d4f; --track:#ebe8e0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#141a1e; --card:#1c242a; --ink:#e8edf0; --muted:#9aa7af; --line:#2c373e;
+      --accent:#5fb0ba; --accent-soft:#23404d; --deep:#1f4a52; --ochre:#e0a24a; --sage:#a3a389; --plum:#ee6a5c; --slate:#c4c4ae; --good:#6cc28e; --track:#2a343b;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Helvetica Neue",Helvetica,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 16px 48px}
+  header{background:linear-gradient(120deg,#16363c 0%,#336E77 70%,#4a8f87 100%);color:#fff;border-radius:14px;padding:28px 26px}
+  header{position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,#787860 0 25%,#e8302f 25% 50%,#d8a830 50% 75%,#181818 75%)}
+  header .org{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+  h1{margin:6px 0 8px;font-size:clamp(26px,5vw,38px);line-height:1.15;font-weight:300;letter-spacing:.01em}
+  header p{margin:0;color:rgba(255,255,255,.88);max-width:640px}
+  .grid{display:grid;gap:12px;margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .grid .card{border-top:4px solid var(--c,var(--accent))}
+  .grid .card:nth-child(1){--c:var(--accent)} .grid .card:nth-child(2){--c:var(--ochre)}
+  .grid .card:nth-child(3){--c:var(--sage)}   .grid .card:nth-child(4){--c:var(--plum)}
+  .grid .card:nth-child(5){--c:var(--accent)} .grid .card:nth-child(6){--c:var(--slate)}
+  .card h2{display:flex;align-items:center;gap:8px}
+  .card h2::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--accent)}
+  section:nth-of-type(2) h2::before{background:var(--ochre)}
+  .two .card:nth-child(2) h2::before{background:var(--plum)}
+  #countyCard h2::before{background:var(--sage)}
+  section:last-of-type h2::before{background:var(--slate)}  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .label{font-size:13px;color:var(--muted)}
+  .value{font-size:28px;font-weight:650;margin-top:2px;font-variant-numeric:tabular-nums}
+  section{margin-top:28px}
+  h2{font-size:18px;margin:0 0 12px}
+  .bar{height:18px;background:var(--track);border-radius:9px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--ochre));width:0;transition:width .6s}
+  .barnote{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-top:8px}
+  .two{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .row{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:center;margin:10px 0;font-size:14px}
+  .row .track{height:10px;background:var(--track);border-radius:5px;overflow:hidden}
+  .row .track>span{display:block;height:100%;background:var(--accent);border-radius:5px}
+  .row .num{font-variant-numeric:tabular-nums;color:var(--muted);min-width:90px;text-align:right}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600}
+  td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+  .empty{color:var(--muted);font-size:14px;margin:0}
+  .note{margin-top:32px;font-size:13px;color:var(--muted)}
+  .brandfoot{background:#181818;color:#d9d8cf;margin-top:24px}
+  .brandfoot .stripe{display:flex;height:6px}
+  .brandfoot .stripe i{flex:1}
+  .brandfoot .inner{max-width:960px;margin:0 auto;padding:22px 16px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;font-size:14px}
+  .brandfoot b{color:#fff;font-weight:600;letter-spacing:.04em}
+  .brandfoot a{color:#d8a830;text-decoration:none;border-bottom:1px solid rgba(216,168,48,.5)}
+  .brandfoot a:hover{color:#fff}
+  .brandfoot .tag{color:#9a9a86}
+  #status{font-size:13px;color:rgba(255,255,255,.75);margin-top:10px}
+  @media (max-width:520px){.row{grid-template-columns:110px 1fr}.row .num{grid-column:1/-1;text-align:left}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="org">The Peter and Elizabeth C. Tower Foundation</div>
+    <h1>2026 Community Experts Fund</h1>
+    <p>Award progress for this year's fund, by state and focus area. Individual grantees are listed here once awards are approved.</p>
+    <div id="status"></div>
+  </header>
+
+  <div class="grid" id="kpis"></div>
+
+  <section class="card">
+    <h2>Funds awarded</h2>
+    <div class="bar"><span id="fundbar"></span></div>
+    <div class="barnote"><span id="awardedNote"></span><span id="remainingNote"></span></div>
+  </section>
+
+  <section class="two">
+    <div class="card"><h2>Approved by state</h2><div id="states"></div></div>
+    <div class="card"><h2>Approved by focus area</h2><div id="focus"></div></div>
+  </section>
+
+  <section class="card" id="countyCard" hidden>
+    <h2>Approved by county</h2>
+    <div id="counties"></div>
+    <p class="empty" style="margin-top:10px">A grant serving several counties counts once in each county it lists. Its dollars are shown on the "Serves multiple counties" line, not split across counties.</p>
+  </section>
+
+  <section class="card">
+    <h2>Approved grantees</h2>
+    <div id="awardees"></div>
+  </section>
+
+  <p class="note">Figures update automatically as the review team records decisions. Focus areas overlap: a grant can count toward more than one.</p>
+</div>
+
+<footer class="brandfoot">
+  <div class="stripe" aria-hidden="true"><i style="background:#787860"></i><i style="background:#e8302f"></i><i style="background:#d8a830"></i><i style="background:#181818"></i></div>
+  <div class="inner">
+    <span><b>The Peter and Elizabeth C. Tower Foundation</b></span>
+    <span class="tag">Learn more at <a href="https://thetowerfoundation.org">thetowerfoundation.org</a></span>
+  </div>
+</footer>
+
+<script>
+// ---- CONFIG -------------------------------------------------------------
+// Paste the "Publish to web" CSV link for the *Public Summary* tab here.
+// Leave empty to show the built-in snapshot below.
+const SUMMARY_CSV_URL = "";
+// Preferred (near real-time): the Apps Script web app URL ending in /exec.
+const API_URL = "https://script.google.com/macros/s/AKfycbxQeWXa7B9WTSSZoHEHHKf5WtPmwRcP3CN_E0hTvRPh8V4ytZ43W3UaQMNkbGB0_leClA/exec";
+const POLL_SECONDS = 15;
+
+// Fallback snapshot (aggregates only; no applicant-level data). Nov 4, 2026.
+const FALLBACK_CSV = `type,label,count,amount
+metric,available,,380500
+metric,awarded,,0
+metric,remaining,,380500
+metric,requested_pending,,597298
+metric,approved,0,
+metric,declined,0,
+metric,pending,25,
+metric,updated,,2026-11-04
+state,New York,0,0
+state,Massachusetts,0,0
+focus,Mental Health,0,0
+focus,Intellectual Disabilities,0,0
+focus,Learning Disabilities,0,0
+focus,Substance Use Disorders,0,0`;
+// Approved grantees appear as rows:  awardee,<Organization>,<State>,<Amount>
+// -------------------------------------------------------------------------
+
+const $ = id => document.getElementById(id);
+const money = n => "$" + Math.round(n).toLocaleString("en-US");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function parseCSV(text){
+  const rows=[]; let row=[], cur="", q=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(q){ if(c=='"'){ if(text[i+1]=='"'){cur+='"';i++} else q=false } else cur+=c }
+    else if(c=='"') q=true;
+    else if(c==","){row.push(cur);cur=""}
+    else if(c=="\n"||c=="\r"){ if(c=="\r"&&text[i+1]=="\n")i++; row.push(cur);cur="";rows.push(row);row=[] }
+    else cur+=c;
+  }
+  if(cur!==""||row.length){row.push(cur);rows.push(row)}
+  return rows.slice(1).filter(r=>r.some(x=>x.trim()));
+}
+const num = v => { const n = parseFloat(String(v||"").replace(/[$,]/g,"")); return isNaN(n)?0:n };
+
+function build(rows){
+  const m={}, states=[], focus=[], awardees=[];
+  rows.forEach(r=>{
+    const [type,label,c,a]=r.map(x=>x.trim());
+    if(type==="metric") m[label]={count:num(c),amount:num(a),raw:a};
+    else if(type==="state") states.push({label,count:num(c),amount:num(a)});
+    else if(type==="focus") focus.push({label,count:num(c),amount:num(a)});
+    else if(type==="awardee") awardees.push({name:label,state:c,amount:num(a)});
+  });
+  return {m,states,focus,awardees};
+}
+
+const PAL=["var(--accent)","var(--ochre)","var(--sage)","var(--plum)","var(--slate)","var(--deep)"];
+function bars(el,items,colors){
+  const max=Math.max(1,...items.map(i=>i.amount));
+  el.innerHTML=items.map((i,k)=>`<div class="row"><span>${esc(i.label)}</span>
+    <div class="track"><span style="width:${i.amount/max*100}%;background:${(colors||PAL)[k%(colors||PAL).length]}"></span></div>
+    <span class="num">${i.count} grant${i.count===1?"":"s"} · ${money(i.amount)}</span></div>`).join("")
+    || '<p class="empty">No data yet.</p>';
+}
+
+function render(d){
+  const g=k=>d.m[k]||{count:0,amount:0};
+  const avail=g("available").amount, awarded=g("awarded").amount;
+  const remaining=d.m.remaining?g("remaining").amount:avail-awarded;
+  const kpis=[
+    ["Available to award",money(avail)],
+    ["Awarded so far",money(awarded)],
+    ["Remaining",money(remaining)],
+    ["Applications under review",g("pending").count],
+    ["Total requested (pending)",money(g("requested_pending").amount)],
+    ["Grants approved",g("approved").count]
+  ];
+  $("kpis").innerHTML=kpis.map(([l,v])=>`<div class="card"><div class="label">${l}</div><div class="value">${v}</div></div>`).join("");
+  const pct=avail?Math.min(100,awarded/avail*100):0;
+  $("fundbar").style.width=pct+"%";
+  $("awardedNote").textContent=`${money(awarded)} awarded (${pct.toFixed(0)}%)`;
+  $("remainingNote").textContent=`${money(remaining)} remaining`;
+  bars($("states"),d.states,["var(--accent)","var(--ochre)"]); bars($("focus"),d.focus);
+  $("countyCard").hidden=!d.counties;
+  if(d.counties) bars($("counties"),d.counties.concat([{label:"Serves multiple counties",count:d.multi.count,amount:d.multi.amount}]));
+  $("awardees").innerHTML=d.awardees.length
+    ? `<table><thead><tr><th>Organization</th><th>State</th><th class="r">Award</th></tr></thead><tbody>${
+        d.awardees.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.state)}</td><td class="r">${money(a.amount)}</td></tr>`).join("")
+      }</tbody></table>`
+    : '<p class="empty">No awards have been approved yet. Grantees will be listed here once decisions are made.</p>';
+  const u=d.m.updated&&d.m.updated.raw;
+  $("status").textContent=u?`Last updated ${u}`:"";
+}
+
+function fromJSON(j){
+  const m={
+    available:{amount:j.available,count:0}, awarded:{amount:j.awarded,count:0},
+    remaining:{amount:j.remaining,count:0}, requested_pending:{amount:j.requestedPending,count:0},
+    approved:{count:j.approved,amount:0}, declined:{count:j.declined,amount:0},
+    pending:{count:j.pending,amount:0},
+    updated:{raw:new Date(j.updated).toLocaleString("en-US",{dateStyle:"medium",timeStyle:"short"}),count:0,amount:0}
+  };
+  return {m,states:j.states,focus:j.focus,awardees:j.awardees,counties:j.counties,multi:j.multiCounty||{count:0,amount:0}};
+}
+
+async function load(){
+  try{
+    if(API_URL){
+      const r=await fetch(API_URL,{cache:"no-store"}); if(!r.ok) throw 0;
+      return render(fromJSON(await r.json()));
+    }
+    if(SUMMARY_CSV_URL){
+      const r=await fetch(SUMMARY_CSV_URL,{cache:"no-store"}); if(!r.ok) throw 0;
+      return render(build(parseCSV(await r.text())));
+    }
+  }catch(e){ console.warn("Live data unavailable; keeping last values."); return; }
+  render(build(parseCSV(FALLBACK_CSV)));
+}
+load();
+if(API_URL||SUMMARY_CSV_URL) setInterval(()=>{ if(!document.hidden) load(); }, POLL_SECONDS*1000);
+</script>
+</body>
+</html>
